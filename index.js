@@ -14,7 +14,7 @@ const http = require('http')
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3000')
+const port = normalizePort('3000') /**process.env.PORT || */
 app.set('port', port)
 
 /**
