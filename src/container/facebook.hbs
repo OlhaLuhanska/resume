@@ -1,0 +1,66 @@
+<div>
+    <main>
+        <h2>{{name}}</h2>
+        <hr>
+        <section>
+            {{>title data="USERS:" big=false}}
+            {{#each users}}
+                <ul>
+                    <li>
+                        {{>facebook}}
+                        <br>
+                        <br>
+                        <b>Friends:</b>
+                        {{#each friends}}
+                            <ul>
+                                <li>
+                                    {{>facebook}}
+                                    <br>
+                                    <em>Mutual friends:</em>
+                                    {{#each mutual_friends}}
+                                        <ul>
+                                            <li>
+                                            {{>facebook}}
+                                            {{#if mutual_friends}}
+                                            <br>
+                                                <em>Mutual friends:</em>
+                                                {{#each mutual_friends}}
+                                                    <ul>
+                                                        <li>
+                                                        {{>facebook}}
+                                                        </li>
+                                                    </ul>
+                                                {{/each}}
+                                            {{/if}}
+                                            </li>
+                                        </ul>
+                                    {{/each}}
+                                </li>
+                            </ul>
+                        {{/each}}
+                        <br>
+                        <b>Groups:</b>
+                        {{#each groups}}
+                            <ul>
+                                <li>
+                                    <b>{{id}} {{name}}</b>
+                                    <p>{{description}}</p>
+                                    <em>Members:</em>
+                                    <br>
+                                    {{#each members}}
+                                        <ul>
+                                            <li>
+                                            {{>facebook}}
+                                            </li>
+                                        </ul>
+                                    {{/each}}
+                                    <br>
+                                </li>
+                            </ul>
+                        {{/each}}
+                    </li>
+                </ul>
+            {{/each}}
+        </section>
+    </main>
+</div>
