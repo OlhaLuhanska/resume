@@ -1,0 +1,90 @@
+<div>
+    <main>
+        <h2>{{name}}</h2>
+        <h3><em>({{category}})</em></h3>
+        <p>{{description}}</p>
+        <hr>
+        <h4>Price: {{price}}</h4>
+        <hr>
+        <section>
+            {{>title data="Features:" big=false}}
+            {{#with features}}
+                <ul>
+                    <li>
+                        <b>Processor:</b>
+                        {{>mac name=processor}}
+                    </li>
+                    <br>
+                    <li>
+                        <b>Memory:</b>
+                        {{>mac name=memory}}
+                    </li>
+                    <br>
+                    <li>
+                        <b>Storage:</b>
+                        {{>mac name=storage}}
+                    </li>
+                    <br>
+                    <li>
+                        <b>Display:</b>
+                        {{>mac name=display}}
+                    </li>
+                    <br>
+                    <li>
+                        <b>Graphics:</b>
+                        {{>mac name=graphics}}
+                    </li>
+                    <br>
+                    <li>
+                        <b>Ports:</b>
+                        {{#each ports}}
+                        <ul>
+                            <li>
+                                <b>{{type}}</b> ({{count}})
+                                <ul>
+                                    {{#each features}}
+                                        <li>
+                                            {{this}}
+                                        </li>
+                                    {{/each}}
+                                </ul>
+                            </li>
+                            <br>
+                        </ul>
+                        {{/each}}
+                    </li>
+                    <br>
+                    <li>
+                        <b>Battery:</b>
+                        {{>mac name=battery}}
+                    </li>
+                    <br>
+                    <li>
+                        <b>Weght: </b>{{weight}}
+                    </li>
+                    <br>
+                    <li>
+                        <b>Dimensions:</b>
+                        {{>mac name=dimensions}}
+                    </li>
+                    <br>
+                    <li>
+                        <b>Operating system: </b>{{operating_system}}
+                    </li>
+                    <br>
+                    <li>
+                        <b>Accessories: </b>
+                        <ul>
+                        {{#each accessories}}
+                            <li>
+                                {{name}} - price: {{price}}
+                            </li>
+                        {{/each}}
+                        </ul>
+                    </li>
+                    <br>
+                </ul>
+            {{/with}}
+        </section>
+    </main>
+</div>
