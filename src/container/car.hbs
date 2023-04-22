@@ -1,0 +1,140 @@
+{{! 
+Це код container файлу для summary сторінки, 
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+}}
+
+<div>
+    <main>
+        <h2>{{make}} {{model}}, {{color}} ({{year}})</h2>
+        <hr>
+        <section>
+            {{>title data="Features:" big=false}}
+            {{#with features}}
+                <ol>
+                    <li>
+                        <b>Interior:</b>
+                        <br>
+                        <br>
+                        <ul>
+                            {{#with interior}}
+                                <li>
+                                    <b>Seats:</b>
+                                    {{>car name=seats}}
+                                </li>
+                                <br>
+                                <li>
+                                    <b>Dashboard:</b>
+                                    <ul>
+                                        {{#with dashboard}}
+                                            <li>
+                                                <b>material</b> - {{material}}
+                                            </li>
+                                            <li>
+                                                <b>color</b> - {{color}}
+                                            </li>
+                                            <li>
+                                                <b>display:</b>
+                                                {{>car name=display}}
+                                            </li>
+                                        {{/with}}
+                                    </ul>
+                                </li>
+                                <br>
+                                <li>
+                                    <b>Audio:</b>
+                                    {{>car name=audio}}
+                                </li>
+                            {{/with}}
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Exterior:</b>
+                        <br>
+                        <br>
+                        <ul>
+                            {{#with exterior}}
+                                <li>
+                                    <b>Wheels:</b>
+                                    {{>car name=wheels}}
+                                </li>
+                                <br>
+                                <li>
+                                    <b>Headlights:</b>
+                                    {{>car name=headlights}}
+                                </li>
+                                <br>
+                                <li>
+                                    <b>Sunroof:</b>
+                                    {{>car name=sunroof}}
+                                </li>
+                            {{/with}}
+                        </ul>
+                    </li>
+                    <li>
+                        <b>Safety:</b>
+                        <br>
+                        <br>
+                        <ul>
+                            {{#with safety}}
+                                <li>
+                                    <b>Airbags:</b>
+                                    {{>car name=airbags}}
+                                </li>
+                                <br>
+                                <li>
+                                    <b>Assistance:</b>
+                                    {{>car name=assistance}}
+                                </li>
+                                <br>
+                            {{/with}}
+                        </ul>
+                    </li>
+                </ol>
+            {{/with}}
+        </section>
+        <hr>
+        <section>
+            {{>title data="Engine & fuel economy" big=false}}
+            <strong>ENGINE:</strong>
+            {{#with engine}}
+            <ul>
+                <li>
+                    <b>type</b> - {{type}}
+                </li>
+                <li>
+                    <b>displacement</b> - {{displacement}}
+                </li>
+                <li>
+                    <b>horsepower</b> - {{horsepower}}
+                </li>
+                <li>
+                    <b>torque</b> - {{torque}}
+                </li>
+                <li>
+                    <b>transmission:</b>
+                    {{>car name=transmission}}
+                </li>
+                <br>
+            </ul>
+            {{/with}}
+            <strong>FUEL ECONOMY:</strong>
+            {{>car name=fuel_economy}}
+        </section>
+        <hr>
+        <section>
+            {{>title data="PRICE:" big=false}}
+            {{#with price}}
+                <b><em>Base - </em></b>{{base}} <br>
+                <b><em>Destination - </em></b>{{destination}} <br>
+                <b><em>Options:</em></b>
+                {{>car name=options}}
+                <b><em>TOTAL: </em></b>{{total}} <br>
+            {{/with}}
+        </section>
+    </main>
+</div>
+
+{{!-- 
+    Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+    Адже наш layout/default.hbs має вже структуру HTML
+--}}
