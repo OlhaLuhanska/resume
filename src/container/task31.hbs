@@ -199,23 +199,24 @@
         <footer>
             {{#with footer}}
             <h5>{{title}}</h5>
-            <div class="container">
-                <div class="row g-3">
-                    <div class="col-3">
-                        {{#each navigation}}
-                        <a href={{href}} class="btn btn-link">{{text}}</a>
-                        {{/each}}
-                    </div>
-                    <div class="col-3">
-                        {{#each socialMedia}}
-                        <a href={{link}} class="btn btn-outline-dark">{{name}}</a>
-                        {{/each}}
-                    </div>
-                    <div class="col-3">
-                        {{#each partners}}
-                        <a href={{link}} class="btn btn-outline-info">{{name}}</a>
-                        {{/each}}
-                    </div>
+
+            <div class="row">
+                <div class="col-3">
+                    {{#each navigation}}
+                    <a href={{href}} class="btn btn-link mb-2">{{text}}</a>
+                    {{/each}}
+                </div>
+
+                <div class="col-3">
+                    {{#each socialMedia}}
+                    <a href={{link}} class="btn btn-outline-dark mb-2">{{name}}</a>
+                    {{/each}}
+                </div>
+
+                <div class="col-3">
+                    {{#each partners}}
+                    <a href={{link}} class="btn btn-outline-info mb-2">{{name}}</a>
+                    {{/each}}
                 </div>
             </div>
             {{/with}}
