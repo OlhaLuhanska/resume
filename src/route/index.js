@@ -1533,6 +1533,34 @@ router.get('/bootstrap4', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+router.get('/list', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('list', {
+    layout: 'Basic',
+
+    page: {
+      title: 'List page',
+    },
+
+    list: [
+      { name: 'First Button' },
+      { name: 'Secondary Button' },
+      { name: 'Error Button' },
+      { name: 'Submit Button' },
+    ],
+
+    user: {
+      name: 'Ivan',
+      role: 'Admin',
+      isConfirm: true,
+      age: 32,
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 // ================================================================
 
 // Підключаємо роутер до бек-енду
