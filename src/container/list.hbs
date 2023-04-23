@@ -1,0 +1,33 @@
+<div>
+    <ul>
+        {{#each list}}
+        <li>
+            {{#if @first}}
+            <span class="badge text-bg-success rounded-pill text-uppercase">first</span>
+            {{/if}}
+            {{#if @last}}
+            <span class="badge text-bg-danger rounded-pill text-uppercase">last</span>
+            {{/if}}
+            <span>{{name}} - {{@index}}</span>
+        </li>
+        {{/each}}
+    </ul>
+
+    <br>
+    <hr>
+    <br>
+
+    <ul>
+        {{#each user}}
+        <li>
+            {{#if @first}}
+            <span class="badge text-bg-info rounded-pill text-uppercase">first</span>
+            {{/if}}
+            {{#if @last}}
+            <span class="badge text-bg-dark rounded-pill text-uppercase">last</span>
+            {{/if}}
+            <span>{{@key}}: {{this}} - {{@index}}</span>
+        </li>
+        {{/each}}
+    </ul>
+</div>
