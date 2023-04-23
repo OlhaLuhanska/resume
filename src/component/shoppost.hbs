@@ -1,0 +1,20 @@
+<div class="row gy-3 gx-2">
+    {{#each cards}}
+    <div class="col-3">
+        <div class="card text-bg-dark">
+            <div class="card-header">
+                {{title}}
+                {{#if isTop}}
+                <span class="badge text-bg-danger rounded-pill text-uppercase">топ</span>
+                {{/if}}
+                {{#if isNew}}
+                <span class="badge text-bg-success rounded-pill text-uppercase">нова</span>
+                {{/if}}
+            </div>
+            <div class="card-body">
+                <p>{{description}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>

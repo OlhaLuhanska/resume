@@ -1,18 +1,6 @@
 <main class="row">
 
-    <section class="m-2 ms-3">
-        <ol class="breadcrumb">
-            {{#each breadcrumb}}
-            <li class="breadcrumb-item">
-                {{#if url}}
-                <a href={{url}}>{{name}}</a>
-                {{else}}
-                {{name}}
-                {{/if}}
-            </li>
-            {{/each}}
-        </ol>
-    </section>
+    {{> breadcrumb}}
 
     {{#with productData}}
     <section class="col-6 me-5">
