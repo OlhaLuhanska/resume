@@ -1,0 +1,82 @@
+{{> breadcrumb}}
+
+<section class="ms-0 ps-0">
+    {{>title data=header big=true}}
+
+    <div class="row">
+        {{#each sortBlock}}
+        <div class="col-3">
+            <select class="form-select">
+                <option selected>{{placeholder}}</option>
+                {{#each options}}
+                <option value="{{value}}">{{text}}</option>
+                {{/each}}
+            </select>
+        </div>
+        {{/each}}
+    </div>
+
+</section>
+<section class="row px-0">
+    {{#with filterBlock}}
+    <div class="col-4">
+        <aside>
+            <div class="card p-4">
+                {{#with sellers}}
+                <h6>{{title}}</h6>
+                {{#each list}}
+                <div class="form-check">
+                    <label class="form-check-label">{{value}}</label>
+                    <input type="checkbox" class="form-check-input">
+                </div>
+                {{/each}}
+                {{/with}}
+                <hr class="my-3">
+
+                {{#with brands}}
+                <h6>{{title}}</h6>
+                <div>
+                    <input class="form-control my-3" placeholder="{{input.placeholder}}">
+                </div>
+                {{#each options}}
+                <div class="form-check">
+                    <label class="form-check-label">{{value}}</label>
+                    <input type="checkbox" class="form-check-input">
+                </div>
+                {{/each}}
+                {{/with}}
+                <hr class="my-3">
+
+                {{#with price}}
+                <h6>{{title}}</h6>
+                <div>
+                    <input class="form-control my-3" placeholder="{{range.from}}">
+                    <input class="form-control my-3" placeholder="{{range.to}}">
+                </div>
+                {{#with button}}
+                <div>
+                    <a href="{{link}}" class="btn btn-outline-secondary">{{text}}</a>
+                </div>
+                {{/with}}
+                {{/with}}
+                <hr class="my-3">
+
+                {{#each filterList}}
+                <h6>{{title}}</h6>
+                <div class="form-check">
+                    {{#each options}}
+                    <label class="form-check-label">{{value}}</label>
+                    <input type="checkbox" class="form-check-input">
+                    {{/each}}
+                </div>
+                <hr class="my-3">
+                {{/each}}
+            </div>
+        </aside>
+    </div>
+    {{/with}}
+    <div class="col-8">
+        {{> catalogItem}}
+    </div>
+</section>
+{{>shopaction }}
