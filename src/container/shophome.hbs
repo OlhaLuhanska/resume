@@ -1,15 +1,4 @@
 <main class="row">
-    <div class="card">
-        {{#with navigation}}
-        <div class="nav">
-            {{#each links}}
-            <div class="nav-item">
-                <a href={{href}} class="nav-link {{#if @last}} disabled {{/if}}">{{text}}</a>
-            </div>
-            {{/each}}
-        </div>
-        {{/with}}
-    </div>
 
     <section class="mt-5">
         {{#with newsBlock}}
@@ -118,86 +107,5 @@
         </div>
         {{/with}}
     </section>
-
-    <hr class="mt-5 mb-3">
-
-    {{!-- <footer>
-        {{#each footer}}
-        <div class="nav">
-            <div class="col-2">
-                {{#with this.[0]}}
-                <div class="nav-item mb-2">
-                    <a href={{link}} class="nav-link">{{text}}</a>
-                </div>
-                {{/with}}
-            </div>
-            <div class="col-2">
-                {{#with this.[1]}}
-                <div class="nav-item mb-2">
-                    <a href={{link}} class="nav-link">{{text}}</a>
-                </div>
-                {{/with}}
-            </div>
-            <div class="col-2">
-                {{#with this.[2]}}
-                <div class="nav-item mb-2">
-                    <a href={{link}} class="nav-link">{{text}}</a>
-                </div>
-                {{/with}}
-            </div>
-            <div class="col-2">
-                {{#with this.[3]}}
-                <div class="nav-item mb-2">
-                    <a href={{link}} class="nav-link disabled">{{text}}</a>
-                </div>
-                {{/with}}
-            </div>
-        </div>
-        {{/each}}
-    </footer>
-
-    <hr class="mt-5 mb-3"> --}}
-
-    <footer class="col-12">
-        <nav class="row nav">
-
-            <div class="col-2 px-0">
-                {{#each footer.[0]}}
-                <div class="nav-item">
-                    <a href={{link}} class="nav-link px-0 {{#if @last}} disabled {{/if}}">{{text}}</a>
-                </div>
-                {{/each}}
-            </div>
-            <div class="col-2 px-0">
-                {{#each footer.[1]}}
-                <div class="nav-item">
-                    <a href={{link}} class="nav-link px-0 {{#if @last}} disabled {{/if}}">{{text}}</a>
-                </div>
-                {{/each}}
-            </div>
-            <div class="col-2 px-0">
-                {{#each footer.[2]}}
-                <div class="nav-item">
-                    <a href={{link}} class="nav-link px-0 {{#if @last}} disabled {{/if}}">{{text}}</a>
-                </div>
-                {{/each}}
-            </div>
-            <div class="col-2 px-0">
-                {{#each footer.[3]}}
-                <div class="nav-item">
-                    <a href={{link}} class="nav-link px-0 {{#if @last}} disabled {{/if}}">{{text}}</a>
-                </div>
-                {{/each}}
-            </div>
-            <div class="col-2 px-0">
-                {{#each footer.[4]}}
-                <div class="nav-item">
-                    <a href={{link}} class="nav-link px-0 {{#if @last}} disabled {{/if}}">{{text}}</a>
-                </div>
-                {{/each}}
-            </div>
-
-        </nav>
-    </footer>
 
 </main>

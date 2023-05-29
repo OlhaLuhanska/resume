@@ -41,7 +41,152 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+
+    page: {
+      title: 'Resume project',
+    },
+    pages: [
+      {
+        title: 'shophome',
+        href: '/shophome',
+        icon: 'bi bi-house',
+        description: 'Стартова сторінка он-лайн магазину',
+      },
+      {
+        title: 'shopprofile',
+        href: '/shopprofile',
+        icon: 'bi bi-person-circle',
+        description:
+          'Сторінка користувача в он-лайн магазині',
+      },
+      {
+        title: 'shopnews',
+        href: '/shopnews',
+        icon: 'bi bi-newspaper',
+        description:
+          'Сторінка новин та цікавих фактів про котиків ',
+      },
+      {
+        title: 'shopreview',
+        href: '/shopreview',
+        icon: 'bi bi-balloon-heart',
+        description:
+          'Сторінка відгуків про он-лайн магазин',
+      },
+      {
+        title: 'shopcatalog',
+        href: '/shopcatalog',
+        icon: 'bi bi-clipboard2-heart-fill',
+        description:
+          'Сторінка вибору продуктів в он-лайн магазині',
+      },
+      {
+        title: 'shoporder',
+        href: '/shoporder',
+        icon: 'bi bi-credit-card-2-back',
+        description:
+          'Сторінка оформлення замовлення в он-лайн магазині',
+      },
+      {
+        title: 'shopcart',
+        href: '/shopcart',
+        icon: 'bi bi-cart3',
+        description: 'Сторінка корзини в он-лайн магазині',
+      },
+      {
+        title: 'shopproduct',
+        href: '/shopproduct',
+        icon: 'bi bi-display',
+        description:
+          'Сторінка огляду продукту в он-лайн магазині',
+      },
+    ],
+    pagesOther: [
+      {
+        title: 'car',
+        href: '/car',
+      },
+      {
+        title: 'bio',
+        href: '/bio',
+      },
+      {
+        title: 'education',
+        href: '/education',
+      },
+      {
+        title: 'person',
+        href: '/person',
+      },
+      {
+        title: 'program',
+        href: '/program',
+      },
+      {
+        title: 'facebook',
+        href: '/facebook',
+      },
+      {
+        title: 'js',
+        href: '/js',
+      },
+      {
+        title: 'mac',
+        href: '/mac',
+      },
+      {
+        title: 'skills',
+        href: '/skills',
+      },
+      {
+        title: 'summary',
+        href: '/summary',
+      },
+      {
+        title: 'web',
+        href: '/web',
+      },
+      {
+        title: 'work',
+        href: '/work',
+      },
+      {
+        title: 'list',
+        href: '/list',
+      },
+      {
+        title: 'bootstrap entry',
+        href: '/bootstrap',
+      },
+      {
+        title: 'bootstrap nav',
+        href: '/bootstrap4',
+      },
+      {
+        title: 'bootstrap forms',
+        href: '/bootstrap5',
+      },
+      {
+        title: 'bootstrap icons',
+        href: '/bootstrap7',
+      },
+      {
+        title: 'bottstrap cards',
+        href: '/task21',
+      },
+      {
+        title: 'bootstrap text',
+        href: '/task22',
+      },
+      {
+        title: 'bootstrap lists',
+        href: '/task31',
+      },
+    ],
+  })
+
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -3862,6 +4007,7 @@ router.get('/css1', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
+
 // ================================================================
 
 // Підключаємо роутер до бек-енду
